@@ -103,7 +103,7 @@ export default function Home() {
       <ProcessSteps />
 
       {/* About the Lawyer */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="bg-slate-50 rounded-3xl overflow-hidden md:flex">
@@ -150,7 +150,7 @@ export default function Home() {
                 <Link
                   key={city.slug}
                   href={`/byer/${city.slug}`}
-                  className="px-4 py-2 rounded-lg bg-slate-100 text-sm font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition-colors"
+                  className="px-4 py-2 bg-slate-100 text-sm font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition-colors"
                 >
                   {city.name}
                   {city.slug === 'viborg' && <span className="ml-1 text-amber-600">★</span>}

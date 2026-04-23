@@ -169,7 +169,7 @@ export default function ChatbotWidget() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={handleToggle}
-        className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-colors ${
+        className={`chat-fab fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-colors ${
           isOpen
             ? 'bg-slate-900 hover:bg-slate-800'
             : 'bg-amber-600 hover:bg-amber-500'

@@ -61,7 +61,7 @@ export default function CTABanner({
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
           <Link
             href={ctaHref}
-            className={`font-semibold px-7 py-3.5 rounded-lg transition-all hover:scale-[1.02] text-sm sm:text-base ${
+            className={`font-semibold px-7 py-3.5 transition-all hover:scale-[1.02] text-sm sm:text-base ${
               hasImage
                 ? 'bg-amber-600 hover:bg-amber-500 text-white'
                 : inverted

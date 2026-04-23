@@ -79,7 +79,7 @@ export default function VideosPage() {
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                 <a
                   href="tel:70707122"
-                  className="border-2 border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700 font-medium text-sm px-6 py-3 rounded-lg transition-colors"
+                  className="border-2 border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700 font-medium text-sm px-6 py-3 transition-colors"
                 >
                   Ring 70 70 71 22
                 </a>

@@ -37,7 +37,7 @@ export default function ProcessSteps({
   steps = defaultSteps,
 }: ProcessStepsProps) {
   return (
-    <section className="py-20 sm:py-24 bg-white">
+    <section className="py-12 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-16">

@@ -130,7 +130,7 @@ export default function Hero({
               {ctaText && ctaHref && (
                 <Link
                   href={ctaHref}
-                  className="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3.5 rounded-lg transition-all hover:scale-[1.02] text-sm sm:text-base"
+                  className="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3.5 transition-all hover:scale-[1.02] text-sm sm:text-base"
                 >
                   {ctaText}
                 </Link>
@@ -138,7 +138,7 @@ export default function Hero({
               {secondaryCtaText && secondaryCtaHref && (
                 <a
                   href={secondaryCtaHref}
-                  className={`font-medium px-7 py-3.5 rounded-lg transition-all text-sm sm:text-base border-2 ${
+                  className={`font-medium px-7 py-3.5 transition-all text-sm sm:text-base border-2 ${
                     backgroundImage
                       ? 'border-white/30 text-white hover:border-amber-400 hover:text-amber-300'
                       : 'border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700'
@@ -151,7 +151,7 @@ export default function Hero({
             {tertiaryCtaText && tertiaryCtaHref && (
               <Link
                 href={tertiaryCtaHref}
-                className={`font-medium px-7 py-3.5 rounded-lg transition-all text-sm sm:text-base border-2 ${
+                className={`font-medium px-7 py-3.5 transition-all text-sm sm:text-base border-2 ${
                   backgroundImage
                     ? 'border-amber-400 text-white hover:bg-amber-400/10'
                     : 'border-amber-600 text-amber-700 hover:bg-amber-50'

@@ -107,7 +107,7 @@ body {
   }
 }
 
-/* Pointer cursor on interactive elements */
+/* Pointer cursor and no rounded corners on interactive elements */
 a,
 button,
 [role="button"],
@@ -115,4 +115,11 @@ input[type="submit"],
 input[type="button"],
 summary {
   cursor: pointer !important;
+  border-radius: 0 !important;
+}
+
+/* Preserve round shape for chat FAB */
+.chat-fab,
+.chat-fab * {
+  border-radius: 9999px !important;
 }

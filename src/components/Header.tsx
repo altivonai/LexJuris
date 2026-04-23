@@ -121,28 +121,28 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:70707122" className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-amber-700 transition-colors">
+          {/* CTA + Mobile hamburger */}
+          <div className="flex items-center gap-2 lg:gap-4">
+            <a href="tel:70707122" className="hidden lg:flex items-center gap-1.5 text-sm text-slate-500 hover:text-amber-700 transition-colors">
               <Phone className="w-4 h-4" />
               70 70 71 22
             </a>
             <Link
               href="/gratis-samtale"
-              className="bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all hover:scale-[1.02]"
+              className="bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs sm:text-sm px-3 py-1.5 lg:px-5 lg:py-2.5 transition-all hover:scale-[1.02]"
             >
-              Book gratis samtale
+              Gratis samtale
             </Link>
-          </div>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-slate-600 p-2"
-            aria-label={mobileOpen ? 'Luk menu' : 'Åbn menu'}
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile hamburger */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden text-slate-600 p-2"
+              aria-label={mobileOpen ? 'Luk menu' : 'Åbn menu'}
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -232,7 +232,7 @@ export default function Header() {
                 </a>
                 <Link
                   href="/gratis-samtale"
-                  className="block text-center bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-5 py-3.5 rounded-lg transition-colors"
+                  className="block text-center bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-5 py-3.5 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   Book gratis samtale
