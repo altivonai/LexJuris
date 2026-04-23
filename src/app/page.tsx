@@ -40,7 +40,7 @@ export default function Home() {
         subtitle="Det lille advokatfirma i Viborg, hvor du er i centrum. Direkte kontakt til advokaten, gennemsigtige priser og gratis indledende samtale."
         ctaText="Book gratis samtale"
         ctaHref="/gratis-samtale"
-        secondaryCtaText="Ring: 70 70 71 22"
+        secondaryCtaText="Ring 70 70 71 22"
         secondaryCtaHref="tel:70707122"
         tertiaryCtaText="Se videoer"
         tertiaryCtaHref="/videos"
