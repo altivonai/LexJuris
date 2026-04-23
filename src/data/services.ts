@@ -33,10 +33,10 @@ export const services: Service[] = [
     icon: Home,
     heroTitle: 'Køberrådgivning for boligkøb',
     heroSubtitle:
-      'Undgå dyre fejl — få en erfaren boligadvokat ved din side fra købsaftale til nøgleoverlevering.',
+      'Undgå dyre fejl, få en erfaren boligadvokat ved din side fra købsaftale til nøgleoverlevering.',
     content: {
       intro:
-        'Skal du købe bolig og har brug for køberrådgivning? Hos LexJuris hjælper vi dig sikkert igennem dit boligkøb med juridisk rådgivning, der er til at forstå. Du får ærlig rådgivning, fast pris, hurtig respons — og vi arbejder kun for dig.',
+        'Skal du købe bolig og har brug for køberrådgivning? Hos LexJuris hjælper vi dig sikkert igennem dit boligkøb med juridisk rådgivning, der er til at forstå. Du får ærlig rådgivning, fast pris, hurtig respons, og vi arbejder kun for dig.',
       sections: [
         {
           heading: 'Hvad gør en boligadvokat?',
@@ -48,15 +48,15 @@ export const services: Service[] = [
         },
         {
           heading: 'Hvorfor vælge LexJuris?',
-          text: 'Du undgår dyre fejl og skjulte faldgruber. Du får tryghed og ro i maven hele vejen. Faste lave priser uden overraskelser. Vi gennemgår alle handlens dokumenter grundigt — og du ringer ikke til en stor organisation, men direkte til advokaten.',
+          text: 'Du undgår dyre fejl og skjulte faldgruber. Du får tryghed og ro i maven hele vejen. Faste lave priser uden overraskelser. Vi gennemgår alle handlens dokumenter grundigt, og du ringer ikke til en stor organisation, men direkte til advokaten.',
         },
       ],
       pricing: [
-        { item: 'Køberrådgivning', description: 'Enfamiliehus / Sommerhus / Lejlighed', price: '5.800,-' },
-        { item: 'Køberrådgivning', description: 'Grund', price: '3.500,-' },
-        { item: 'Selvsalg', description: 'Enfamiliehus / Sommerhus / Lejlighed', price: '8.600,-' },
-        { item: 'Overdragelseserklæring', description: 'Ved skilsmisse / samlivsophør', price: '4.500,-' },
-        { item: 'Familieoverdragelse', description: 'Enfamiliehus / Sommerhus / Lejlighed', price: '5.500,-' },
+        { item: 'Køberrådgivning', description: 'Enfamiliehus / Sommerhus / Lejlighed', price: '5.800,' },
+        { item: 'Køberrådgivning', description: 'Grund', price: '3.500,' },
+        { item: 'Selvsalg', description: 'Enfamiliehus / Sommerhus / Lejlighed', price: '8.600,' },
+        { item: 'Overdragelseserklæring', description: 'Ved skilsmisse / samlivsophør', price: '4.500,' },
+        { item: 'Familieoverdragelse', description: 'Enfamiliehus / Sommerhus / Lejlighed', price: '5.500,' },
       ],
       faq: [
         {
@@ -79,8 +79,8 @@ export const services: Service[] = [
       blogLinks: [
         { title: 'Alt om tinglysning af skøde ved boligkøb', url: 'https://lexjuris.dk/bolighandel/alt-om-tinglysning-af-skoede-ved-boligkoeb/' },
         { title: 'Hvad kan en advokat hjælpe med ved boligkøb', url: 'https://lexjuris.dk/bolighandel/hvad-kan-en-advokat-hjaelpe-med-ved-boligkoeb/' },
-        { title: 'Advokatforbehold ved boligkøb — er det vigtigt?', url: 'https://lexjuris.dk/bolighandel/advokatforbehold-naar-du-koeber-bolig-er-det-vigtigt/' },
-        { title: 'Boligkøbsguiden — 5 trin', url: 'https://lexjuris.dk/bolighandel/boligkoebsguiden/' },
+        { title: 'Advokatforbehold ved boligkøb, er det vigtigt?', url: 'https://lexjuris.dk/bolighandel/advokatforbehold-naar-du-koeber-bolig-er-det-vigtigt/' },
+        { title: 'Boligkøbsguiden, 5 trin', url: 'https://lexjuris.dk/bolighandel/boligkoebsguiden/' },
       ],
     },
   },
@@ -92,18 +92,18 @@ export const services: Service[] = [
     icon: FileText,
     heroTitle: 'Testamente & Arveret',
     heroSubtitle:
-      'Sikr dine efterladte og dine ønsker — med et professionelt testamente, der er juridisk korrekt.',
+      'Sikr dine efterladte og dine ønsker, med et professionelt testamente, der er juridisk korrekt.',
     content: {
       intro:
         'Hos LexJuris får du hjælp til at oprette et testamente, der sikrer dine efterladte og dine ønsker. Vi rådgiver om arv og tvangsarv, særeje, ægtefællebeskyttelse og børnetestamenter. Fast pris fra 2.495 kr. inkl. moms.',
       sections: [
         {
           heading: 'Hvorfor oprette testamente?',
-          text: 'Uden testamente bestemmer arveloven, hvem der arver dig. Kun personer i arveklasserne arver — ønsker du at tilgodese andre, kræver det et testamente. For samlevende er testamente helt afgørende, da I ellers ikke arver hinanden.',
+          text: 'Uden testamente bestemmer arveloven, hvem der arver dig. Kun personer i arveklasserne arver, ønsker du at tilgodese andre, kræver det et testamente. For samlevende er testamente helt afgørende, da I ellers ikke arver hinanden.',
         },
         {
           heading: 'Den mest udbredte misforståelse',
-          text: '"Når man har boet sammen i 2 år, er man stillet som gift." Det er forkert — medmindre I opretter testamente. Mange tror fejlagtigt at samlevende automatisk arver hinanden. Det gør I ikke uden testamente.',
+          text: '"Når man har boet sammen i 2 år, er man stillet som gift." Det er forkert, medmindre I opretter testamente. Mange tror fejlagtigt at samlevende automatisk arver hinanden. Det gør I ikke uden testamente.',
         },
         {
           heading: 'Hvad rådgiver vi om?',
@@ -117,7 +117,7 @@ export const services: Service[] = [
         },
         {
           question: 'Kan et barn gøres arveløs?',
-          answer: 'Nej, livsarvinger (børn) har altid krav på tvangsarv — uanset kontakt eller ej. Tvangsarven er en fjerdedel af den legale arv.',
+          answer: 'Nej, livsarvinger (børn) har altid krav på tvangsarv, uanset kontakt eller ej. Tvangsarven er en fjerdedel af den legale arv.',
         },
         {
           question: 'Arver samlevende hinanden?',
@@ -125,7 +125,7 @@ export const services: Service[] = [
         },
       ],
       blogLinks: [
-        { title: 'Arverækkefølgen — hvem modtager arv efter dig?', url: 'https://lexjuris.dk/testamente/arveraekkefoelgen/' },
+        { title: 'Arverækkefølgen, hvem modtager arv efter dig?', url: 'https://lexjuris.dk/testamente/arveraekkefoelgen/' },
         { title: 'Den mest udbredte misforståelse i arveret', url: 'https://lexjuris.dk/testamente/det-er-den-mest-udbredte-misforstaelse/' },
         { title: 'Testamente til særbørn og uskiftet bo', url: 'https://lexjuris.dk/testamente/testamente-til-saerboern/' },
         { title: 'Få styr på pensionsordningen', url: 'https://lexjuris.dk/testamente/faa-styr-paa-pensionsordningen/' },
@@ -140,7 +140,7 @@ export const services: Service[] = [
     icon: Heart,
     heroTitle: 'Ægtepagt & Særeje',
     heroSubtitle:
-      'Sikr jeres økonomi med en ægtepagt — uanset om I er nygifte eller har været gift i mange år.',
+      'Sikr jeres økonomi med en ægtepagt, uanset om I er nygifte eller har været gift i mange år.',
     content: {
       intro:
         'En ægtepagt er en aftale mellem ægtefæller om, at visse værdier skal være særeje. Det kan beskytte dig økonomisk ved skilsmisse eller dødsfald. Hos LexJuris hjælper vi med at udfærdige og tinglyse din ægtepagt.',
@@ -179,21 +179,21 @@ export const services: Service[] = [
     icon: Shield,
     heroTitle: 'Fremtidsfuldmagt',
     heroSubtitle:
-      'Sikr dig selv og din familie — bestem hvem der træffer beslutninger, hvis du ikke længere selv kan.',
+      'Sikr dig selv og din familie, bestem hvem der træffer beslutninger, hvis du ikke længere selv kan.',
     content: {
       intro:
         'En fremtidsfuldmagt sikrer, at du selv bestemmer, hvem der skal handle på dine vegne, hvis du en dag ikke længere kan. Uden fremtidsfuldmagt vil det være Familieretshuset der bestemmer. Hos LexJuris hjælper vi dig med at oprette en juridisk korrekt fremtidsfuldmagt.',
       sections: [
         {
           heading: 'Hvad er en fremtidsfuldmagt?',
-          text: 'En fremtidsfuldmagt er et juridisk dokument, der giver en eller flere udpegede personer ret til at træffe beslutninger på dine vegne — typisk om økonomi og personlige forhold — hvis du på grund af sygdom eller svækket mental funktion ikke selv kan.',
+          text: 'En fremtidsfuldmagt er et juridisk dokument, der giver en eller flere udpegede personer ret til at træffe beslutninger på dine vegne, typisk om økonomi og personlige forhold, hvis du på grund af sygdom eller svækket mental funktion ikke selv kan.',
         },
         {
           heading: 'Hvornår sættes den i kraft?',
           text: 'Fremtidsfuldmagten sættes i kraft af Familieretshuset, når fuldmagtsgiver ikke længere kan varetage sine forhold. Typisk på grund af demens, alvorlig sygdom eller lignende.',
         },
         {
-          heading: 'Uden fuldmagt — ingen ret',
+          heading: 'Uden fuldmagt, ingen ret',
           text: 'Helt enkelt: Uden skriftlig fuldmagt har ingen ret til at foretage dispositioner på dine vegne. Det vil sige, at selv dine nærmeste børn ikke kan handle for dig uden en fuldmagt.',
         },
       ],
@@ -204,7 +204,7 @@ export const services: Service[] = [
         },
         {
           question: 'Hvem kan være fuldmægtig?',
-          answer: 'Du kan udpege en eller flere fuldmægtige — typisk ægtefælle, børn eller andre du har tillid til. De skal være myndige.',
+          answer: 'Du kan udpege en eller flere fuldmægtige, typisk ægtefælle, børn eller andre du har tillid til. De skal være myndige.',
         },
         {
           question: 'Skal fremtidsfuldmagten tinglyses?',
@@ -212,7 +212,7 @@ export const services: Service[] = [
         },
       ],
       blogLinks: [
-        { title: 'Fremtidsfuldmagten — sikrer dig selv og familien', url: 'https://lexjuris.dk/fremtidsfuldmagt/fremtidsfuldmagten-sikr-dig-selv-og-familien-foer-sygdom-og-demens/' },
+        { title: 'Fremtidsfuldmagten, sikrer dig selv og familien', url: 'https://lexjuris.dk/fremtidsfuldmagt/fremtidsfuldmagten-sikr-dig-selv-og-familien-foer-sygdom-og-demens/' },
         { title: 'Når fremtidsfuldmagten sættes i kraft', url: 'https://lexjuris.dk/fremtidsfuldmagt/naar-fremtidsfuldmagten-saettes-i-kraft/' },
       ],
     },
@@ -225,18 +225,18 @@ export const services: Service[] = [
     icon: Scale,
     heroTitle: 'Skilsmisse & Bodeling',
     heroSubtitle:
-      'Professionel hjælp til at navigere skilsmissen — så du kan fokusere på fremtiden.',
+      'Professionel hjælp til at navigere skilsmissen, så du kan fokusere på fremtiden.',
     content: {
       intro:
         'En skilsmisse er både følelsesmæssigt og juridisk krævende. Hos LexJuris hjælper vi dig med bodeling, forældremyndighed, bopæl, samvær, ægtefællebidrag og det økonomiske opgør. Vi sørger for, at dine rettigheder bliver varetaget.',
       sections: [
         {
           heading: 'Bodeling og det økonomiske opgør',
-          text: 'Jeres netto-fællesbo er jeres samlede nettoværdier. Alt skal opgøres — bolig, pension, opsparing, gæld. Vi hjælper med at sikre en retfærdig deling og forklarer reglerne, så du forstår din situation.',
+          text: 'Jeres netto-fællesbo er jeres samlede nettoværdier. Alt skal opgøres, bolig, pension, opsparing, gæld. Vi hjælper med at sikre en retfærdig deling og forklarer reglerne, så du forstår din situation.',
         },
         {
           heading: 'Bopæl og samvær',
-          text: 'Forældre med fælles forældremyndighed har automatisk delt bopæl de første 3 måneder. Vi rådgiver om samværsaftaler, bopælsret og hvad der er bedst for barnet — og for dig.',
+          text: 'Forældre med fælles forældremyndighed har automatisk delt bopæl de første 3 måneder. Vi rådgiver om samværsaftaler, bopælsret og hvad der er bedst for barnet, og for dig.',
         },
         {
           heading: 'Ægtefællebidrag',
@@ -269,14 +269,14 @@ export const services: Service[] = [
     icon: BookOpen,
     heroTitle: 'Dødsbobehandling',
     heroSubtitle:
-      'Vi hjælper dig trygt og korrekt igennem dødsbobehandlingen — fra skifte til arveudlodning.',
+      'Vi hjælper dig trygt og korrekt igennem dødsbobehandlingen, fra skifte til arveudlodning.',
     content: {
       intro:
         'Når et dødsfald rammer familien, er der mange juridiske forhold at tage stilling til. Hos LexJuris bistår vi arvinger og familier med behandling af dødsbo: kontakt til skifteretten, valg af skifteform, boopgørelse og arveudlodning.',
       sections: [
         {
           heading: 'Hvad er et dødsbo?',
-          text: 'Når vi afgår ved døden, bliver vi til et "dødsbo". Det sker automatisk i det digitale system. Boet skal derefter skiftes — det vil sige, at formue og gæld skal gøres op og fordeles til arvingerne.',
+          text: 'Når vi afgår ved døden, bliver vi til et "dødsbo". Det sker automatisk i det digitale system. Boet skal derefter skiftes, det vil sige, at formue og gæld skal gøres op og fordeles til arvingerne.',
         },
         {
           heading: 'Skifteformer',

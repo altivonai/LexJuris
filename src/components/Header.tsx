@@ -19,6 +19,7 @@ const navItems = [
   { name: 'Ydelser', href: '/ydelser', children: services },
   { name: 'Om os', href: '/om-os' },
   { name: 'Byer', href: '/byer' },
+  { name: 'Videos', href: '/videos' },
   { name: 'Kontakt', href: '/kontakt' },
 ];
 

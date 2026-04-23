@@ -13,7 +13,7 @@ interface CTABannerProps {
 
 export default function CTABanner({
   title = 'Har du brug for juridisk rådgivning?',
-  subtitle = 'Book en gratis indledende samtale. Vi hjælper dig videre — uforpligtende og til faste priser.',
+  subtitle = 'Book en gratis indledende samtale. Vi hjælper dig videre, uforpligtende og til faste priser.',
   ctaText = 'Book gratis samtale',
   ctaHref = '/gratis-samtale',
   phoneText = 'Eller ring direkte: 70 70 71 22',

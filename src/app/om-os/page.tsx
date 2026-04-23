@@ -1,9 +1,7 @@
-import { Mail, Phone, Smartphone } from 'lucide-react';
 import Image from 'next/image';
 import Hero from '@/components/Hero';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import CTABanner from '@/components/CTABanner';
-import { team } from '@/data/team';
+import TeamSection from '@/components/TeamSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -78,59 +76,7 @@ export default function OmOsPage() {
       </section>
 
       {/* Team */}
-      <section className="py-20 sm:py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll>
-            <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-14">
-              Mød teamet
-            </h2>
-          </AnimateOnScroll>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {team.map((member, i) => (
-              <AnimateOnScroll key={member.name} delay={i * 0.1}>
-                <div className="group bg-white rounded-2xl border border-slate-200 overflow-hidden h-full flex flex-col hover:shadow-lg hover:shadow-slate-200/50 transition-all hover:-translate-y-1">
-                  {/* Photo */}
-                  <div className="aspect-[4/3] relative bg-slate-100 overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm text-amber-700 font-medium">{member.title}</p>
-                    <p className="mt-3 text-sm text-slate-500 leading-relaxed flex-1">
-                      {member.bio}
-                    </p>
-                    <div className="mt-4 pt-4 border-t border-slate-100 space-y-1.5">
-                      {member.email && (
-                        <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-amber-700 transition-colors">
-                          <Mail className="w-3.5 h-3.5" />
-                          {member.email}
-                        </a>
-                      )}
-                      <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-amber-700 transition-colors">
-                        <Phone className="w-3.5 h-3.5" />
-                        {member.phone}
-                      </a>
-                      {member.mobile && (
-                        <a href={`tel:${member.mobile.replace(/\s/g, '')}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-amber-700 transition-colors">
-                          <Smartphone className="w-3.5 h-3.5" />
-                          {member.mobile}
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamSection />
 
       {/* Values */}
       <section className="py-20 sm:py-24 bg-white">
@@ -144,7 +90,7 @@ export default function OmOsPage() {
             {[
               { title: 'Tryghed', text: 'Vi giver dig ro i maven ved at forklare alt i et sprog du forstår.' },
               { title: 'Faste priser', text: 'Gennemsigtige priser uden overraskelser. Du kender prisen inden vi starter.' },
-              { title: 'Direkte kontakt', text: 'Du taler altid direkte med advokaten — ikke en receptionist.' },
+              { title: 'Direkte kontakt', text: 'Du taler altid direkte med advokaten, ikke en receptionist.' },
               { title: 'Tilgængelighed', text: 'Online møder og digital sagsbehandling, uanset hvor du bor i Danmark.' },
             ].map((v, i) => (
               <AnimateOnScroll key={v.title} delay={i * 0.08}>
@@ -160,8 +106,6 @@ export default function OmOsPage() {
           </div>
         </div>
       </section>
-
-      <CTABanner />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import Hero from '@/components/Hero';
 import BentoGrid from '@/components/BentoGrid';
-import CTABanner from '@/components/CTABanner';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,7 +13,7 @@ export default function YdelserPage() {
     <>
       <Hero
         title="Vores ydelser"
-        subtitle="Vi tilbyder kompetent juridisk rådgivning til private — uanset om du har brug for hjælp til boligkøb, testamente, skilsmisse eller andet. Faste lave priser og gratis indledende samtale."
+        subtitle="Vi tilbyder kompetent juridisk rådgivning til private, uanset om du har brug for hjælp til boligkøb, testamente, skilsmisse eller andet. Faste lave priser og gratis indledende samtale."
         compact
       />
 
@@ -23,8 +22,6 @@ export default function YdelserPage() {
           <BentoGrid large />
         </div>
       </section>
-
-      <CTABanner />
     </>
   );
 }

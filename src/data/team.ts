@@ -16,7 +16,7 @@ export const team: TeamMember[] = [
     phone: '70 70 71 22',
     mobile: '26 15 16 04',
     image: '/images/team/anette.jpg',
-    bio: 'Anette driver LexJuris Advokatfirma og henvender sig til privatpersoner med juridiske emner som arv, skilsmisse, boligkøb og fremtidsfuldmagter — på en letforståelig måde. Din tryghed er hendes mål.',
+    bio: 'Anette driver LexJuris Advokatfirma og henvender sig til privatpersoner med juridiske emner som arv, skilsmisse, boligkøb og fremtidsfuldmagter, på en letforståelig måde. Din tryghed er hendes mål.',
   },
   {
     name: 'Bibi Nielsen',

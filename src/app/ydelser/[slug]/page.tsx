@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { ExternalLink, Phone, Mail } from 'lucide-react';
 import Hero from '@/components/Hero';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import CTABanner from '@/components/CTABanner';
 import FAQAccordion from '@/components/FAQAccordion';
 import { services } from '@/data/services';
 import type { Metadata } from 'next';
@@ -107,12 +106,6 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                     <p className="text-sm text-white/80 mb-6">
                       Gratis og uforpligtende indledende samtale.
                     </p>
-                    <Link
-                      href="/gratis-samtale"
-                      className="block bg-white hover:bg-slate-50 text-amber-700 font-semibold text-base px-6 py-4 rounded-lg transition-all hover:scale-[1.02] w-full"
-                    >
-                      Book gratis samtale
-                    </Link>
                     <div className="space-y-2">
                       <a
                         href="tel:70707122"
@@ -177,8 +170,6 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           </div>
         </section>
       )}
-
-      <CTABanner />
     </>
   );
 }

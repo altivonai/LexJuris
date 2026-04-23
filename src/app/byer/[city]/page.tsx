@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Home, FileText, ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import CTABanner from '@/components/CTABanner';
 import { cities } from '@/data/cities';
 import type { Metadata } from 'next';
 
@@ -36,7 +35,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
       <Hero
         title={`Advokat i ${city.name}`}
         highlightWord={city.name}
-        subtitle={`LexJuris tilbyder professionel juridisk rådgivning i ${city.name}. Testamente, boligadvokat og meget mere — til faste lave priser.`}
+        subtitle={`LexJuris tilbyder professionel juridisk rådgivning i ${city.name}. Testamente, boligadvokat og meget mere, til faste lave priser.`}
         ctaText="Book gratis samtale"
         ctaHref="/gratis-samtale"
         secondaryCtaText="Ring: 70 70 71 22"
@@ -121,7 +120,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
           <AnimateOnScroll>
             <div className="bg-white rounded-2xl p-7 sm:p-8 border border-slate-200">
               <h2 className="font-[family-name:var(--font-space-grotesk)] text-xl font-semibold text-slate-900 mb-4">
-                Advokat i {city.name} — lokal ekspertise
+                Advokat i {city.name}, lokal ekspertise
               </h2>
               <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
                 <p>
@@ -132,7 +131,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
                 </p>
                 <p>
                   Vores hovedkontor ligger i Viborg, men vi betjener klienter i {city.name} og
-                  omegn — både fysisk og via online møder. Du får altid direkte kontakt til
+                  omegn, både fysisk og via online møder. Du får altid direkte kontakt til
                   advokaten, faste lave priser og en gratis indledende samtale.
                 </p>
               </div>
@@ -140,11 +139,6 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
           </AnimateOnScroll>
         </div>
       </section>
-
-      <CTABanner
-        title={`Brug for en advokat i ${city.name}?`}
-        subtitle="Book en gratis indledende samtale. Vi hjælper dig videre — uforpligtende og til faste priser."
-      />
     </>
   );
 }

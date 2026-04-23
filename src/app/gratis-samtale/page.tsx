@@ -4,7 +4,6 @@ import AnimateOnScroll from '@/components/AnimateOnScroll';
 import StatsStrip from '@/components/StatsStrip';
 import ProcessSteps from '@/components/ProcessSteps';
 import TestimonialSection from '@/components/TestimonialSection';
-import CTABanner from '@/components/CTABanner';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,10 +14,10 @@ export const metadata: Metadata = {
 
 const benefits = [
   'Vi gennemgår din sag og giver dig et overblik',
-  'Du får svar på dine spørgsmål — uden jurasprog',
-  'Uforpligtende — du bestemmer selv om du vil gå videre',
-  'Faste lave priser — du kender prisen inden vi starter',
-  'Online møde muligt — uanset hvor du bor i Danmark',
+  'Du får svar på dine spørgsmål, uden jurasprog',
+  'Uforpligtende, du bestemmer selv om du vil gå videre',
+  'Faste lave priser, du kender prisen inden vi starter',
+  'Online møde muligt, uanset hvor du bor i Danmark',
 ];
 
 export default function GratisSamtalePage() {
@@ -27,7 +26,7 @@ export default function GratisSamtalePage() {
       <Hero
         title="Book en gratis indledende samtale"
         highlightWord="gratis"
-        subtitle="Tag det første skridt. Vi gennemgår din situation og giver dig et klart overblik over dine muligheder — helt uforpligtende."
+        subtitle="Tag det første skridt. Vi gennemgår din situation og giver dig et klart overblik over dine muligheder, helt uforpligtende."
         compact
       />
 
@@ -97,12 +96,6 @@ export default function GratisSamtalePage() {
 
       {/* Testimonials */}
       <TestimonialSection title="Det siger vores klienter" />
-
-      {/* Bottom CTA */}
-      <CTABanner
-        title="Tag det første skridt i dag"
-        subtitle="Det er en god idé at tage stilling til din og din families juridiske situation. Få rådgivning, så du kan træffe de bedste valg."
-      />
     </>
   );
 }

@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Users, BadgeCheck, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import CTABanner from '@/components/CTABanner';
 import StatsStrip from '@/components/StatsStrip';
 import ProcessSteps from '@/components/ProcessSteps';
 import BentoGrid from '@/components/BentoGrid';
@@ -43,6 +42,8 @@ export default function Home() {
         ctaHref="/gratis-samtale"
         secondaryCtaText="Ring: 70 70 71 22"
         secondaryCtaHref="tel:70707122"
+        tertiaryCtaText="Se videoer"
+        tertiaryCtaHref="/videos"
       />
 
       {/* Office image with overlapping text */}
@@ -90,7 +91,7 @@ export default function Home() {
                 Vores specialer
               </h2>
               <p className="mt-3 text-slate-500 max-w-xl mx-auto">
-                Juridisk rådgivning til private — skræddersyet til din situation.
+                Juridisk rådgivning til private, skræddersyet til din situation.
               </p>
             </div>
           </AnimateOnScroll>
@@ -109,7 +110,7 @@ export default function Home() {
               <div className="md:w-2/5 relative aspect-[4/3] md:aspect-auto min-h-[300px]">
                 <Image
                   src="/images/team/anette.jpg"
-                  alt="Anette Malthe Christiansen — Advokat"
+                  alt="Anette Malthe Christiansen, Advokat"
                   fill
                   className="object-cover"
                 />
@@ -123,20 +124,6 @@ export default function Home() {
                   Du ringer ikke til en stor organisation, men direkte til mig. Kort sagt: Din tryghed er mit mål.
                   Jeg oversætter det svære og peger på det vigtige, så du ved, hvad du skriver under på.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href="/gratis-samtale"
-                    className="bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all hover:scale-[1.02]"
-                  >
-                    Book gratis samtale
-                  </Link>
-                  <a
-                    href="tel:70707122"
-                    className="border-2 border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700 font-medium text-sm px-5 py-2.5 rounded-lg transition-colors"
-                  >
-                    Ring: 70 70 71 22
-                  </a>
-                </div>
               </div>
             </div>
           </AnimateOnScroll>
@@ -154,7 +141,7 @@ export default function Home() {
               Vi dækker hele landet
             </h2>
             <p className="mt-3 text-slate-500 max-w-xl mx-auto">
-              Hovedkontor i Viborg, men vi betjener klienter overalt i Danmark — fysisk og online.
+              Hovedkontor i Viborg, men vi betjener klienter overalt i Danmark, fysisk og online.
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll>
@@ -191,7 +178,7 @@ export default function Home() {
                 Seneste blogindlæg
               </h2>
               <p className="mt-3 text-slate-500">
-                Juridisk viden — letforståeligt og gratis.
+                Juridisk viden, letforståeligt og gratis.
               </p>
             </div>
           </AnimateOnScroll>
@@ -229,9 +216,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <CTABanner />
     </>
   );
 }

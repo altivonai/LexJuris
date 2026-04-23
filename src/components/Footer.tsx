@@ -13,6 +13,7 @@ const footerServices = [
 
 const footerLinks = [
   { name: 'Om os', href: '/om-os' },
+  { name: 'Videos', href: '/videos' },
   { name: 'Kontakt', href: '/kontakt' },
   { name: 'Byer vi dækker', href: '/byer' },
   { name: 'Privatlivspolitik', href: '/privatlivspolitik' },
@@ -24,26 +25,6 @@ export default function Footer() {
       {/* Thin amber accent line at top */}
       <div className="h-[2px] bg-gradient-to-r from-transparent via-amber-600 to-transparent opacity-40" />
 
-      {/* CTA strip */}
-      <div className="border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
-            <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white">
-              Har du brug for juridisk rådgivning?
-            </h3>
-            <p className="text-slate-400 text-sm mt-1">
-              Book en gratis indledende samtale — vi hjælper dig videre.
-            </p>
-          </div>
-          <Link
-            href="/gratis-samtale"
-            className="bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-all hover:scale-[1.02] whitespace-nowrap"
-          >
-            Book gratis samtale
-          </Link>
-        </div>
-      </div>
-
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
@@ -51,7 +32,7 @@ export default function Footer() {
           <div className="text-center sm:text-left">
             <Link href="/" className="inline-block">
               <Image
-                src="/images/logo-blue.png"
+                src="/images/logo-gold.png"
                 alt="LexJuris Advokatfirma"
                 width={150}
                 height={42}
@@ -59,7 +40,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-4 text-sm text-slate-500 leading-relaxed">
-              Erfaren advokat i Viborg — juridisk rådgivning til private i hele landet.
+              Erfaren advokat i Viborg, juridisk rådgivning til private i hele landet.
               Fast pris, direkte kontakt og gratis indledende samtale.
             </p>
             {/* Social links */}

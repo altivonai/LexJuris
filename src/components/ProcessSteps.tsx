@@ -18,7 +18,7 @@ const defaultSteps: Step[] = [
   {
     number: '01',
     title: 'Book en samtale',
-    description: 'Ring eller skriv til os — vi tilbyder en gratis og uforpligtende indledende samtale.',
+    description: 'Ring eller skriv til os, vi tilbyder en gratis og uforpligtende indledende samtale.',
   },
   {
     number: '02',
@@ -28,7 +28,7 @@ const defaultSteps: Step[] = [
   {
     number: '03',
     title: 'Din løsning',
-    description: 'Vi håndterer din sag professionelt — til fast pris og med direkte kontakt til advokaten.',
+    description: 'Vi håndterer din sag professionelt, til fast pris og med direkte kontakt til advokaten.',
   },
 ];
 

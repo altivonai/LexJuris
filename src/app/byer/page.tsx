@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import CTABanner from '@/components/CTABanner';
+
 import { cities } from '@/data/cities';
 import type { Metadata } from 'next';
 
@@ -17,7 +17,7 @@ export default function ByerPage() {
     <>
       <Hero
         title="Byer vi dækker"
-        subtitle="Hovedkontor i Viborg — men vi betjener klienter i hele Danmark. Find din lokale advokat."
+        subtitle="Hovedkontor i Viborg, men vi betjener klienter i hele Danmark. Find din lokale advokat."
         compact
       />
 
@@ -65,7 +65,7 @@ export default function ByerPage() {
                   ingen binding.
                 </p>
                 <p>
-                  Vi tilbyder professionel juridisk rådgivning i hele landet — og det betyder,
+                  Vi tilbyder professionel juridisk rådgivning i hele landet, og det betyder,
                   at du kun er få klik fra tryg og kompetent juridisk bistand, uanset hvor du bor.
                   Vores hovedkontor ligger i Viborg, men vi betjener klienter overalt i Danmark.
                 </p>
@@ -74,8 +74,6 @@ export default function ByerPage() {
           </AnimateOnScroll>
         </div>
       </section>
-
-      <CTABanner />
     </>
   );
 }

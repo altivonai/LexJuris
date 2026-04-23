@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   title: string;
@@ -13,6 +12,8 @@ interface HeroProps {
   ctaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
+  tertiaryCtaText?: string;
+  tertiaryCtaHref?: string;
   compact?: boolean;
   backgroundImage?: string;
 }
@@ -25,6 +26,8 @@ export default function Hero({
   ctaHref,
   secondaryCtaText,
   secondaryCtaHref,
+  tertiaryCtaText,
+  tertiaryCtaHref,
   compact = false,
   backgroundImage,
 }: HeroProps) {
@@ -44,7 +47,7 @@ export default function Hero({
   return (
     <section
       className={`relative overflow-hidden ${
-        compact ? 'py-20 sm:py-24' : 'py-24 sm:py-32 lg:py-40'
+        compact ? 'py-16 sm:py-20' : 'py-16 sm:py-20 lg:py-24'
       } ${backgroundImage ? 'bg-slate-900' : 'bg-slate-50'}`}
     >
       {/* Background image */}
@@ -116,50 +119,47 @@ export default function Hero({
           </motion.p>
         )}
 
-        {(ctaText || secondaryCtaText) && (
+        {(ctaText || secondaryCtaText || tertiaryCtaText) && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className={`mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 ${compact ? 'justify-center' : ''}`}
+            className={`mt-8 sm:mt-10 flex flex-col gap-3 ${compact ? 'items-center' : 'items-start'}`}
           >
-            {ctaText && ctaHref && (
+            <div className={`flex flex-col sm:flex-row gap-3 ${compact ? '' : ''}`}>
+              {ctaText && ctaHref && (
+                <Link
+                  href={ctaHref}
+                  className="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3.5 rounded-lg transition-all hover:scale-[1.02] text-sm sm:text-base"
+                >
+                  {ctaText}
+                </Link>
+              )}
+              {secondaryCtaText && secondaryCtaHref && (
+                <a
+                  href={secondaryCtaHref}
+                  className={`font-medium px-7 py-3.5 rounded-lg transition-all text-sm sm:text-base border-2 ${
+                    backgroundImage
+                      ? 'border-white/30 text-white hover:border-amber-400 hover:text-amber-300'
+                      : 'border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700'
+                  }`}
+                >
+                  {secondaryCtaText}
+                </a>
+              )}
+            </div>
+            {tertiaryCtaText && tertiaryCtaHref && (
               <Link
-                href={ctaHref}
-                className="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3.5 rounded-lg transition-all hover:scale-[1.02] text-sm sm:text-base"
-              >
-                {ctaText}
-              </Link>
-            )}
-            {secondaryCtaText && secondaryCtaHref && (
-              <a
-                href={secondaryCtaHref}
+                href={tertiaryCtaHref}
                 className={`font-medium px-7 py-3.5 rounded-lg transition-all text-sm sm:text-base border-2 ${
                   backgroundImage
-                    ? 'border-white/30 text-white hover:border-amber-400 hover:text-amber-300'
-                    : 'border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700'
+                    ? 'border-amber-400 text-white hover:bg-amber-400/10'
+                    : 'border-amber-600 text-amber-700 hover:bg-amber-50'
                 }`}
               >
-                {secondaryCtaText}
-              </a>
+                {tertiaryCtaText}
+              </Link>
             )}
-          </motion.div>
-        )}
-
-        {/* Scroll indicator — only on full hero */}
-        {!compact && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <ChevronDown className="w-6 h-6 text-slate-400" />
-            </motion.div>
           </motion.div>
         )}
       </div>
