@@ -27,6 +27,7 @@ export default function GratisSamtalePage() {
         title="Book en gratis indledende samtale"
         highlightWord="gratis"
         subtitle="Tag det første skridt. Vi gennemgår din situation og giver dig et klart overblik over dine muligheder, helt uforpligtende."
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 

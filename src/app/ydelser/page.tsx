@@ -14,6 +14,7 @@ export default function YdelserPage() {
       <Hero
         title="Vores ydelser"
         subtitle="Vi tilbyder kompetent juridisk rådgivning til private, uanset om du har brug for hjælp til boligkøb, testamente, skilsmisse eller andet. Faste lave priser og gratis indledende samtale."
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 

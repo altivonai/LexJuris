@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PrivatlivspolitikPage() {
   return (
     <>
-      <Hero title="Cookie- og privatlivspolitik" compact />
+      <Hero title="Cookie- og privatlivspolitik" backgroundImage="/images/hero/family.jpg" compact />
 
       <section className="py-20 sm:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -16,6 +16,7 @@ export default function OmOsPage() {
       <Hero
         title="Om LexJuris"
         subtitle="Det lille advokatfirma i Viborg, hvor du er i centrum. Vi gør juraen tilgængelig og forståelig."
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 

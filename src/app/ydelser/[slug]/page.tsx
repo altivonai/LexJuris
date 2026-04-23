@@ -36,10 +36,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
       <Hero
         title={service.heroTitle}
         subtitle={service.heroSubtitle}
-        ctaText="Book gratis samtale"
-        ctaHref="/gratis-samtale"
-        secondaryCtaText="Ring 70 70 71 22"
-        secondaryCtaHref="tel:70707122"
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 

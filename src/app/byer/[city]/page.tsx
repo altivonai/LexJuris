@@ -36,10 +36,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
         title={`Advokat i ${city.name}`}
         highlightWord={city.name}
         subtitle={`LexJuris tilbyder professionel juridisk rådgivning i ${city.name}. Testamente, boligadvokat og meget mere, til faste lave priser.`}
-        ctaText="Book gratis samtale"
-        ctaHref="/gratis-samtale"
-        secondaryCtaText="Ring 70 70 71 22"
-        secondaryCtaHref="tel:70707122"
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 

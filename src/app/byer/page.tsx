@@ -18,6 +18,7 @@ export default function ByerPage() {
       <Hero
         title="Byer vi dækker"
         subtitle="Hovedkontor i Viborg, men vi betjener klienter i hele Danmark. Find din lokale advokat."
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 

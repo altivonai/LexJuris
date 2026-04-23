@@ -29,8 +29,9 @@ export default function VideosPage() {
   return (
     <>
       <Hero
-        title="Videoer"
-        subtitle="Se vores videoer med juridisk vejledning og praktiske råd fra LexJuris."
+        title="Juridisk viden på video"
+        subtitle="Bliv klogere på dine rettigheder. Vores advokater deler konkrete råd og forklaringer i korte videoer."
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 

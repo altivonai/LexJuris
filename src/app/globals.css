@@ -106,3 +106,13 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Pointer cursor on interactive elements */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+summary {
+  cursor: pointer !important;
+}

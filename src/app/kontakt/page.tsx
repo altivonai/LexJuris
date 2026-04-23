@@ -16,6 +16,7 @@ export default function KontaktPage() {
       <Hero
         title="Kontakt os"
         subtitle="Vi er klar til at hjælpe. Ring, skriv eller book en gratis indledende samtale."
+        backgroundImage="/images/hero/family.jpg"
         compact
       />
 
