@@ -24,7 +24,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
           <div
             key={i}
             className={`bg-white rounded-xl border transition-colors overflow-hidden ${
-              isOpen ? 'border-cyan-200' : 'border-slate-200'
+                isOpen ? 'border-amber-200' : 'border-slate-200'
             }`}
           >
             <button
@@ -32,12 +32,12 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               className="w-full flex items-center justify-between px-5 py-4 text-left group"
             >
               <span className={`font-medium pr-4 transition-colors ${
-                isOpen ? 'text-cyan-600' : 'text-slate-800'
+                isOpen ? 'text-amber-700' : 'text-slate-800'
               }`}>
                 {item.question}
               </span>
               <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                isOpen ? 'bg-cyan-50 text-cyan-600' : 'bg-slate-100 text-slate-500'
+                isOpen ? 'bg-amber-50 text-amber-700' : 'bg-slate-100 text-slate-500'
               }`}>
                 {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
               </div>

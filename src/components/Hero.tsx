@@ -64,8 +64,8 @@ export default function Hero({
       {/* Gradient mesh background — only when no image */}
       {!backgroundImage && (
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-100/40 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-50/60 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-50/60 rounded-full blur-3xl" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/60 rounded-full blur-3xl" />
         </div>
       )}
@@ -83,7 +83,7 @@ export default function Hero({
       )}
 
       {/* Bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-50" />
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50" />
 
       <div className={`relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 ${compact ? 'text-center' : ''}`}>
         <motion.h1
@@ -126,7 +126,7 @@ export default function Hero({
             {ctaText && ctaHref && (
               <Link
                 href={ctaHref}
-                className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-7 py-3.5 rounded-lg transition-all hover:scale-[1.02] text-sm sm:text-base"
+                className="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3.5 rounded-lg transition-all hover:scale-[1.02] text-sm sm:text-base"
               >
                 {ctaText}
               </Link>
@@ -136,8 +136,8 @@ export default function Hero({
                 href={secondaryCtaHref}
                 className={`font-medium px-7 py-3.5 rounded-lg transition-all text-sm sm:text-base border-2 ${
                   backgroundImage
-                    ? 'border-white/30 text-white hover:border-cyan-400 hover:text-cyan-400'
-                    : 'border-slate-300 text-slate-700 hover:border-cyan-500 hover:text-cyan-600'
+                    ? 'border-white/30 text-white hover:border-amber-400 hover:text-amber-300'
+                    : 'border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700'
                 }`}
               >
                 {secondaryCtaText}

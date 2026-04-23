@@ -32,7 +32,7 @@ export default function KontaktPage() {
                   <div className="space-y-5">
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0">
-                        <MapPin className="w-5 h-5 text-cyan-600" />
+                        <MapPin className="w-5 h-5 text-amber-600" />
                       </div>
                       <div>
                         <p className="font-medium text-slate-900">Adresse</p>
@@ -41,22 +41,22 @@ export default function KontaktPage() {
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0">
-                        <Phone className="w-5 h-5 text-cyan-600" />
+                        <Phone className="w-5 h-5 text-amber-600" />
                       </div>
                       <div>
                         <p className="font-medium text-slate-900">Telefon</p>
-                        <a href="tel:70707122" className="text-sm text-slate-500 hover:text-cyan-600 transition-colors">
+                        <a href="tel:70707122" className="text-sm text-slate-500 hover:text-amber-700 transition-colors">
                           70 70 71 22
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0">
-                        <Mail className="w-5 h-5 text-cyan-600" />
+                        <Mail className="w-5 h-5 text-amber-600" />
                       </div>
                       <div>
                         <p className="font-medium text-slate-900">E-mail</p>
-                        <a href="mailto:info@lexjuris.dk" className="text-sm text-slate-500 hover:text-cyan-600 transition-colors">
+                        <a href="mailto:info@lexjuris.dk" className="text-sm text-slate-500 hover:text-amber-700 transition-colors">
                           info@lexjuris.dk
                         </a>
                       </div>
@@ -68,7 +68,7 @@ export default function KontaktPage() {
               <AnimateOnScroll delay={0.08}>
                 <div className="bg-slate-50 rounded-2xl p-7 sm:p-8">
                   <h2 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold text-slate-900 mb-6 flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-cyan-600" />
+                    <Clock className="w-5 h-5 text-amber-600" />
                     Åbningstider
                   </h2>
                   <div className="space-y-3">
@@ -94,15 +94,15 @@ export default function KontaktPage() {
                     href="https://www.google.dk/maps/place/Gravene+2,+8800+Viborg/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-slate-50 rounded-2xl p-6 hover:bg-cyan-50 transition-all h-full flex flex-col justify-between"
+                    className="group bg-slate-50 rounded-2xl p-6 hover:bg-amber-50 transition-all h-full flex flex-col justify-between"
                   >
                     <div>
-                      <h3 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900 group-hover:text-cyan-700 transition-colors">
+                      <h3 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900 group-hover:text-amber-700 transition-colors">
                         Find os
                       </h3>
                       <p className="mt-1 text-xs text-slate-500">Gravene 2, Viborg</p>
                     </div>
-                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-cyan-600">
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-amber-700">
                       Google Maps <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </a>
@@ -111,7 +111,7 @@ export default function KontaktPage() {
                 <AnimateOnScroll delay={0.24}>
                   <Link
                     href="/gratis-samtale"
-                    className="group bg-cyan-500 rounded-2xl p-6 hover:bg-cyan-400 transition-all h-full flex flex-col justify-between"
+                    className="group bg-amber-600 rounded-2xl p-6 hover:bg-amber-500 transition-all h-full flex flex-col justify-between"
                   >
                     <div>
                       <h3 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-white">

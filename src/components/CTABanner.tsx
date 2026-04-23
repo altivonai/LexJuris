@@ -24,7 +24,7 @@ export default function CTABanner({
 
   return (
     <section className={`relative py-20 sm:py-24 overflow-hidden ${
-      hasImage ? 'bg-slate-900' : inverted ? 'bg-cyan-500' : 'bg-slate-50'
+      hasImage ? 'bg-slate-900' : inverted ? 'bg-amber-600' : 'bg-slate-50'
     }`}>
       {/* Background image */}
       {hasImage && (
@@ -42,8 +42,8 @@ export default function CTABanner({
       {/* Background accents — only when no image and not inverted */}
       {!hasImage && !inverted && (
         <>
-          <div className="absolute top-0 left-1/3 w-72 h-72 bg-cyan-100/60 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/3 w-72 h-72 bg-cyan-50/80 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/3 w-72 h-72 bg-amber-100/60 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/3 w-72 h-72 bg-amber-50/80 rounded-full blur-3xl" />
         </>
       )}
 
@@ -63,10 +63,10 @@ export default function CTABanner({
             href={ctaHref}
             className={`font-semibold px-7 py-3.5 rounded-lg transition-all hover:scale-[1.02] text-sm sm:text-base ${
               hasImage
-                ? 'bg-cyan-500 hover:bg-cyan-400 text-white'
+                ? 'bg-amber-600 hover:bg-amber-500 text-white'
                 : inverted
                   ? 'bg-slate-950 hover:bg-slate-800 text-white'
-                  : 'bg-cyan-500 hover:bg-cyan-400 text-white'
+                  : 'bg-amber-600 hover:bg-amber-500 text-white'
             }`}
           >
             {ctaText}
@@ -75,10 +75,10 @@ export default function CTABanner({
             href="tel:70707122"
             className={`text-sm transition-colors ${
               hasImage
-                ? 'text-slate-400 hover:text-cyan-400'
+                ? 'text-slate-400 hover:text-amber-400'
                 : inverted
-                  ? 'text-slate-700 hover:text-slate-950'
-                  : 'text-slate-400 hover:text-cyan-600'
+                  ? 'text-white hover:text-slate-100'
+                  : 'text-slate-400 hover:text-amber-700'
             }`}
           >
             {phoneText}

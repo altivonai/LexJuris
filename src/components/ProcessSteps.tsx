@@ -48,7 +48,7 @@ export default function ProcessSteps({
         <div className="relative">
           {/* Connecting line */}
           <div className="hidden lg:block absolute top-7 left-[calc(16.67%+28px)] right-[calc(16.67%+28px)] h-[2px] bg-slate-200" />
-          <div className="hidden lg:block absolute top-7 left-[calc(16.67%+28px)] right-[calc(16.67%+28px)] h-[2px] bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500 opacity-30" />
+          <div className="hidden lg:block absolute top-7 left-[calc(16.67%+28px)] right-[calc(16.67%+28px)] h-[2px] bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 opacity-30" />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
             {steps.map((step, i) => (
@@ -57,7 +57,7 @@ export default function ProcessSteps({
                   {/* Number circle */}
                   <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-slate-950 text-white font-[family-name:var(--font-space-grotesk)] font-bold text-lg mb-6">
                     {step.number}
-                    <div className="absolute inset-0 rounded-2xl bg-cyan-500/20 blur-xl" />
+                    <div className="absolute inset-0 rounded-2xl bg-amber-600/20 blur-xl" />
                   </div>
                   <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold text-slate-900">
                     {step.title}

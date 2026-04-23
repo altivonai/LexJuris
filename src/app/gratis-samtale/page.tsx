@@ -46,10 +46,10 @@ export default function GratisSamtalePage() {
                 <div className="space-y-4">
                   <a
                     href="tel:70707122"
-                    className="flex items-center gap-4 bg-slate-50 rounded-2xl p-5 hover:bg-cyan-50 transition-all group"
+                    className="flex items-center gap-4 bg-slate-50 rounded-2xl p-5 hover:bg-amber-50 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 group-hover:bg-cyan-100 transition-colors shadow-sm">
-                      <Phone className="w-5 h-5 text-cyan-600" />
+                    <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors shadow-sm">
+                      <Phone className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Ring til os</p>
@@ -58,10 +58,10 @@ export default function GratisSamtalePage() {
                   </a>
                   <a
                     href="mailto:info@lexjuris.dk"
-                    className="flex items-center gap-4 bg-slate-50 rounded-2xl p-5 hover:bg-cyan-50 transition-all group"
+                    className="flex items-center gap-4 bg-slate-50 rounded-2xl p-5 hover:bg-amber-50 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 group-hover:bg-cyan-100 transition-colors shadow-sm">
-                      <Mail className="w-5 h-5 text-cyan-600" />
+                    <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors shadow-sm">
+                      <Mail className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Send en e-mail</p>
@@ -81,7 +81,7 @@ export default function GratisSamtalePage() {
                 <ul className="space-y-3.5">
                   {benefits.map((b) => (
                     <li key={b} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-cyan-500 mt-0.5 shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
                       <span className="text-sm text-slate-600 leading-relaxed">{b}</span>
                     </li>
                   ))}

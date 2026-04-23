@@ -13,16 +13,16 @@
   --color-slate-900: #0f172a;
   --color-slate-950: #020617;
 
-  --color-cyan-50: #ecfeff;
-  --color-cyan-100: #cffafe;
-  --color-cyan-200: #a5f3fc;
-  --color-cyan-300: #67e8f9;
-  --color-cyan-400: #22d3ee;
-  --color-cyan-500: #06b6d4;
-  --color-cyan-600: #0891b2;
-  --color-cyan-700: #0e7490;
-  --color-cyan-800: #155e75;
-  --color-cyan-900: #164e63;
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
 
   --font-heading: var(--font-space-grotesk);
   --font-body: var(--font-inter);
@@ -38,8 +38,8 @@ body {
 }
 
 ::selection {
-  background-color: #06b6d4;
-  color: #020617;
+  background-color: #d97706;
+  color: #ffffff;
 }
 
 /* Custom scrollbar */
@@ -54,12 +54,12 @@ body {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: #d97706;
 }
 
 /* Focus visible ring */
 *:focus-visible {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid #d97706;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -73,7 +73,7 @@ body {
 
 /* Gradient text utility */
 .text-gradient {
-  background: linear-gradient(135deg, #06b6d4, #22d3ee);
+  background: linear-gradient(135deg, #d97706, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

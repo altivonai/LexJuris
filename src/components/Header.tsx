@@ -42,8 +42,8 @@ export default function Header() {
           : 'bg-white'
       }`}
     >
-      {/* Thin cyan accent line at top */}
-      <div className="h-[2px] bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-400" />
+      {/* Thin amber accent line at top */}
+      <div className="h-[2px] bg-gradient-to-r from-amber-400 via-amber-600 to-amber-400" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -75,7 +75,7 @@ export default function Header() {
                   >
                     {item.name}
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
-                    <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-cyan-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                    <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-amber-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                   </Link>
                   <AnimatePresence>
                     {servicesOpen && (
@@ -95,8 +95,8 @@ export default function Header() {
                                 href={child.href}
                                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors group/item"
                               >
-                                <div className="w-9 h-9 rounded-lg bg-slate-100 group-hover/item:bg-cyan-50 flex items-center justify-center transition-colors">
-                                  <Icon className="w-4 h-4 text-slate-500 group-hover/item:text-cyan-600 transition-colors" />
+                                <div className="w-9 h-9 rounded-lg bg-slate-100 group-hover/item:bg-amber-50 flex items-center justify-center transition-colors">
+                                  <Icon className="w-4 h-4 text-slate-500 group-hover/item:text-amber-600 transition-colors" />
                                 </div>
                                 <span className="font-medium">{child.name}</span>
                               </Link>
@@ -114,7 +114,7 @@ export default function Header() {
                   className="relative text-sm font-medium text-slate-600 hover:text-slate-900 px-4 py-2 transition-colors group"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-cyan-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-amber-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </Link>
               )
             )}
@@ -122,13 +122,13 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:70707122" className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-cyan-600 transition-colors">
+            <a href="tel:70707122" className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-amber-700 transition-colors">
               <Phone className="w-4 h-4" />
               70 70 71 22
             </a>
             <Link
               href="/gratis-samtale"
-              className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm px-5 py-2.5 rounded-lg transition-all hover:scale-[1.02]"
+              className="bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all hover:scale-[1.02]"
             >
               Book gratis samtale
             </Link>
@@ -163,7 +163,7 @@ export default function Header() {
                   className="flex items-center justify-between w-full py-4 text-lg font-medium text-slate-900"
                 >
                   Ydelser
-                  <ChevronDown className={`w-5 h-5 text-cyan-500 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-amber-600 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {mobileServicesOpen && (
@@ -177,7 +177,7 @@ export default function Header() {
                       <div className="pl-4 pb-3 space-y-1">
                         <Link
                           href="/ydelser"
-                          className="block py-2.5 text-sm text-cyan-600 font-medium"
+                          className="block py-2.5 text-sm text-amber-700 font-medium"
                           onClick={() => setMobileOpen(false)}
                         >
                           Alle ydelser
@@ -231,7 +231,7 @@ export default function Header() {
                 </a>
                 <Link
                   href="/gratis-samtale"
-                  className="block text-center bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm px-5 py-3.5 rounded-lg transition-colors"
+                  className="block text-center bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-5 py-3.5 rounded-lg transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   Book gratis samtale

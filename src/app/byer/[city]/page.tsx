@@ -58,12 +58,12 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             <AnimateOnScroll>
               <Link
                 href="/ydelser/testamente"
-                className="group bg-white rounded-2xl p-7 border border-slate-200 hover:border-cyan-300 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1 h-full flex flex-col"
+                className="group bg-white rounded-2xl p-7 border border-slate-200 hover:border-amber-300 transition-all hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 h-full flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-100 group-hover:bg-cyan-50 flex items-center justify-center mb-5 transition-colors">
-                  <FileText className="w-5 h-5 text-slate-500 group-hover:text-cyan-600 transition-colors" />
+                <div className="w-12 h-12 rounded-xl bg-slate-100 group-hover:bg-amber-50 flex items-center justify-center mb-5 transition-colors">
+                  <FileText className="w-5 h-5 text-slate-500 group-hover:text-amber-600 transition-colors" />
                 </div>
-                <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold text-slate-900 group-hover:text-amber-700 transition-colors">
                   Testamente advokat i {city.name}
                 </h3>
                 <p className="mt-2 text-sm text-slate-500 leading-relaxed flex-1">
@@ -71,8 +71,8 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
                   arv, tvangsarv, ægtefællebeskyttelse og samlevertestamente.
                 </p>
                 <div className="mt-5 flex items-center justify-between">
-                  <span className="font-[family-name:var(--font-space-grotesk)] text-sm font-bold text-cyan-600">Fra kr. 2.495,-</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-500 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="font-[family-name:var(--font-space-grotesk)] text-sm font-bold text-amber-700">Fra kr. 2.495,-</span>
+                  <ArrowRight className="w-4 h-4 text-amber-600 group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </Link>
             </AnimateOnScroll>
@@ -81,12 +81,12 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             <AnimateOnScroll delay={0.08}>
               <Link
                 href="/ydelser/koeberraadgivning"
-                className="group bg-white rounded-2xl p-7 border border-slate-200 hover:border-cyan-300 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1 h-full flex flex-col"
+                className="group bg-white rounded-2xl p-7 border border-slate-200 hover:border-amber-300 transition-all hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 h-full flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-100 group-hover:bg-cyan-50 flex items-center justify-center mb-5 transition-colors">
-                  <Home className="w-5 h-5 text-slate-500 group-hover:text-cyan-600 transition-colors" />
+                <div className="w-12 h-12 rounded-xl bg-slate-100 group-hover:bg-amber-50 flex items-center justify-center mb-5 transition-colors">
+                  <Home className="w-5 h-5 text-slate-500 group-hover:text-amber-600 transition-colors" />
                 </div>
-                <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold text-slate-900 group-hover:text-amber-700 transition-colors">
                   Boligadvokat i {city.name}
                 </h3>
                 <p className="mt-2 text-sm text-slate-500 leading-relaxed flex-1">
@@ -94,8 +94,8 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
                   skøde, servitutter og sikrer dine interesser.
                 </p>
                 <div className="mt-5 flex items-center justify-between">
-                  <span className="font-[family-name:var(--font-space-grotesk)] text-sm font-bold text-cyan-600">Fra kr. 5.800,-</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-500 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="font-[family-name:var(--font-space-grotesk)] text-sm font-bold text-amber-700">Fra kr. 5.800,-</span>
+                  <ArrowRight className="w-4 h-4 text-amber-600 group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </Link>
             </AnimateOnScroll>
@@ -106,7 +106,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             <div className="mt-10 text-center">
               <Link
                 href="/ydelser"
-                className="inline-flex items-center gap-2 text-sm font-medium text-cyan-600 hover:text-cyan-500 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 hover:text-amber-600 transition-colors"
               >
                 Se alle vores ydelser <ArrowRight className="w-4 h-4" />
               </Link>

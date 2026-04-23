@@ -108,7 +108,7 @@ export default function PrivatlivspolitikPage() {
                     kan desuden til enhver tid gøre indsigelse mod, at oplysninger anvendes. Du kan
                     også tilbagekalde dit samtykke til, at der bliver behandlet oplysninger om dig.
                     Henvendelse herom kan ske til:{' '}
-                    <a href="mailto:info@lexjuris.dk" className="text-cyan-600 hover:text-cyan-500 transition-colors">
+                    <a href="mailto:info@lexjuris.dk" className="text-amber-700 hover:text-amber-600 transition-colors">
                       info@lexjuris.dk
                     </a>
                     . Hvis du vil klage over vores behandling af dine personoplysninger, har du
@@ -125,12 +125,12 @@ export default function PrivatlivspolitikPage() {
                     Gravene 2<br />
                     8800 Viborg<br />
                     Telefon:{' '}
-                    <a href="tel:70707122" className="text-cyan-600 hover:text-cyan-500 transition-colors">
+                    <a href="tel:70707122" className="text-amber-700 hover:text-amber-600 transition-colors">
                       70 70 71 22
                     </a>
                     <br />
                     Email:{' '}
-                    <a href="mailto:info@lexjuris.dk" className="text-cyan-600 hover:text-cyan-500 transition-colors">
+                    <a href="mailto:info@lexjuris.dk" className="text-amber-700 hover:text-amber-600 transition-colors">
                       info@lexjuris.dk
                     </a>
                   </p>

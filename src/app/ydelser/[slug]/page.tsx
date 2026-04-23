@@ -76,7 +76,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                 <AnimateOnScroll>
                   <div>
                     <h2 className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold text-slate-900 mb-6">
-                      Priser <span className="text-cyan-600">(inkl. moms)</span>
+                      Priser <span className="text-amber-700">(inkl. moms)</span>
                     </h2>
                     {/* Card-based pricing for all sizes */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -84,7 +84,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                         <div key={i} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                           <p className="font-medium text-slate-900 text-sm">{p.item}</p>
                           <p className="text-xs text-slate-500 mt-1">{p.description}</p>
-                          <p className="mt-3 font-[family-name:var(--font-space-grotesk)] font-bold text-cyan-600">
+                          <p className="mt-3 font-[family-name:var(--font-space-grotesk)] font-bold text-amber-700">
                             kr. {p.price}
                           </p>
                         </div>
@@ -100,7 +100,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               <div className="lg:sticky lg:top-28 space-y-6">
                 {/* CTA Card */}
                 <AnimateOnScroll>
-                  <div className="bg-cyan-500 rounded-2xl p-7 text-center">
+                  <div className="bg-amber-600 rounded-2xl p-7 text-center">
                     <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-bold text-white mb-2">
                       Klar til at komme i gang?
                     </h3>
@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                     </p>
                     <Link
                       href="/gratis-samtale"
-                      className="block bg-white hover:bg-slate-50 text-cyan-600 font-semibold text-sm px-6 py-3 rounded-lg transition-all hover:scale-[1.02] mb-4"
+                      className="block bg-white hover:bg-slate-50 text-amber-700 font-semibold text-base px-6 py-4 rounded-lg transition-all hover:scale-[1.02] w-full"
                     >
                       Book gratis samtale
                     </Link>
@@ -146,9 +146,9 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-start gap-2 text-sm text-slate-600 hover:text-cyan-600 transition-colors"
+                            className="group flex items-start gap-2 text-sm text-slate-600 hover:text-amber-700 transition-colors"
                           >
-                            <ExternalLink className="w-4 h-4 shrink-0 mt-0.5 text-slate-400 group-hover:text-cyan-500" />
+                            <ExternalLink className="w-4 h-4 shrink-0 mt-0.5 text-slate-400 group-hover:text-amber-600" />
                             <span>{link.title}</span>
                           </a>
                         ))}

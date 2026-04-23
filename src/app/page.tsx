@@ -60,7 +60,7 @@ export default function Home() {
               </p>
               <a
                 href="/om-os"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-cyan-600 hover:text-cyan-500 transition-colors"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-amber-700 hover:text-amber-600 transition-colors"
               >
                 Læs mere <ArrowRight className="w-4 h-4" />
               </a>
@@ -115,7 +115,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 sm:p-10 md:p-12 md:w-3/5 flex flex-col justify-center">
-                <p className="text-sm font-medium text-cyan-600 uppercase tracking-wide mb-2">Mød advokaten</p>
+                <p className="text-sm font-medium text-amber-700 uppercase tracking-wide mb-2">Mød advokaten</p>
                 <h2 className="font-[family-name:var(--font-space-grotesk)] text-2xl sm:text-3xl font-bold text-slate-900">
                   Anette Malthe Christiansen
                 </h2>
@@ -126,13 +126,13 @@ export default function Home() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
                     href="/gratis-samtale"
-                    className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm px-5 py-2.5 rounded-lg transition-all hover:scale-[1.02]"
+                    className="bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all hover:scale-[1.02]"
                   >
                     Book gratis samtale
                   </Link>
                   <a
                     href="tel:70707122"
-                    className="border-2 border-slate-300 text-slate-700 hover:border-cyan-500 hover:text-cyan-600 font-medium text-sm px-5 py-2.5 rounded-lg transition-colors"
+                    className="border-2 border-slate-300 text-slate-700 hover:border-amber-600 hover:text-amber-700 font-medium text-sm px-5 py-2.5 rounded-lg transition-colors"
                   >
                     Ring: 70 70 71 22
                   </a>
@@ -163,17 +163,17 @@ export default function Home() {
                 <Link
                   key={city.slug}
                   href={`/byer/${city.slug}`}
-                  className="px-4 py-2 rounded-lg bg-slate-100 text-sm font-medium text-slate-700 hover:bg-cyan-50 hover:text-cyan-700 transition-colors"
+                  className="px-4 py-2 rounded-lg bg-slate-100 text-sm font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition-colors"
                 >
                   {city.name}
-                  {city.slug === 'viborg' && <span className="ml-1 text-cyan-500">★</span>}
+                  {city.slug === 'viborg' && <span className="ml-1 text-amber-600">★</span>}
                 </Link>
               ))}
             </div>
             <div className="mt-6">
               <Link
                 href="/byer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-600 hover:text-cyan-500 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-700 hover:text-amber-600 transition-colors"
               >
                 Se alle byer <ArrowRight className="w-4 h-4" />
               </Link>
@@ -202,7 +202,7 @@ export default function Home() {
                   href={post.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white rounded-2xl border border-slate-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1 h-full flex flex-col overflow-hidden"
+                  className="group bg-white rounded-2xl border border-slate-200 hover:border-amber-300 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 h-full flex flex-col overflow-hidden"
                 >
                   <div className="aspect-[16/9] relative bg-slate-100">
                     <Image
@@ -213,13 +213,13 @@ export default function Home() {
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <span className="text-xs font-semibold text-cyan-600 uppercase tracking-wider">
+                    <span className="text-xs font-semibold text-amber-700 uppercase tracking-wider">
                       {post.category}
                     </span>
-                    <h3 className="mt-2 font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                    <h3 className="mt-2 font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900 group-hover:text-amber-700 transition-colors">
                       {post.title}
                     </h3>
-                    <span className="mt-auto pt-4 inline-flex items-center gap-1 text-sm font-medium text-cyan-600">
+                    <span className="mt-auto pt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-700">
                       Læs på lexjuris.dk <ExternalLink className="w-3.5 h-3.5" />
                     </span>
                   </div>

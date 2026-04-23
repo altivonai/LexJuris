@@ -102,23 +102,23 @@ export default function OmOsPage() {
                     <h3 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900">
                       {member.name}
                     </h3>
-                    <p className="text-sm text-cyan-600 font-medium">{member.title}</p>
+                    <p className="text-sm text-amber-700 font-medium">{member.title}</p>
                     <p className="mt-3 text-sm text-slate-500 leading-relaxed flex-1">
                       {member.bio}
                     </p>
                     <div className="mt-4 pt-4 border-t border-slate-100 space-y-1.5">
                       {member.email && (
-                        <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-cyan-600 transition-colors">
+                        <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-amber-700 transition-colors">
                           <Mail className="w-3.5 h-3.5" />
                           {member.email}
                         </a>
                       )}
-                      <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-cyan-600 transition-colors">
+                      <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-amber-700 transition-colors">
                         <Phone className="w-3.5 h-3.5" />
                         {member.phone}
                       </a>
                       {member.mobile && (
-                        <a href={`tel:${member.mobile.replace(/\s/g, '')}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-cyan-600 transition-colors">
+                        <a href={`tel:${member.mobile.replace(/\s/g, '')}`} className="flex items-center gap-2 text-xs text-slate-500 hover:text-amber-700 transition-colors">
                           <Smartphone className="w-3.5 h-3.5" />
                           {member.mobile}
                         </a>
@@ -149,7 +149,7 @@ export default function OmOsPage() {
             ].map((v, i) => (
               <AnimateOnScroll key={v.title} delay={i * 0.08}>
                 <div className="bg-slate-50 rounded-2xl p-6 h-full">
-                  <div className="w-2 h-2 rounded-full bg-cyan-500 mb-4" />
+                  <div className="w-2 h-2 rounded-full bg-amber-600 mb-4" />
                   <h3 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900">
                     {v.title}
                   </h3>

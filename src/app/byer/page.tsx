@@ -28,21 +28,21 @@ export default function ByerPage() {
               <AnimateOnScroll key={city.slug} delay={i * 0.05}>
                 <Link
                   href={`/byer/${city.slug}`}
-                  className="group bg-white rounded-xl p-5 border border-slate-200 hover:border-cyan-300 transition-all hover:shadow-lg hover:shadow-cyan-500/5 hover:-translate-y-0.5 flex items-center gap-3"
+                  className="group bg-white rounded-xl p-5 border border-slate-200 hover:border-amber-300 transition-all hover:shadow-lg hover:shadow-amber-500/5 hover:-translate-y-0.5 flex items-center gap-3"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-slate-100 group-hover:bg-cyan-50 flex items-center justify-center shrink-0 transition-colors">
-                    <MapPin className="w-4 h-4 text-slate-500 group-hover:text-cyan-600 transition-colors" />
+                  <div className="w-10 h-10 rounded-lg bg-slate-100 group-hover:bg-amber-50 flex items-center justify-center shrink-0 transition-colors">
+                    <MapPin className="w-4 h-4 text-slate-500 group-hover:text-amber-600 transition-colors" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                    <h2 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-slate-900 group-hover:text-amber-700 transition-colors">
                       {city.name}
                       {city.slug === 'viborg' && (
-                        <span className="ml-2 text-xs text-cyan-600 font-normal">★ Hovedkontor</span>
+                        <span className="ml-2 text-xs text-amber-700 font-normal">★ Hovedkontor</span>
                       )}
                     </h2>
                     <p className="text-xs text-slate-400">Testamente & Boligadvokat</p>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-cyan-500 group-hover:translate-x-0.5 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all" />
                 </Link>
               </AnimateOnScroll>
             ))}
