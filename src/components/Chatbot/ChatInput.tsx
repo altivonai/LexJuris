@@ -48,7 +48,7 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
           placeholder="Stil et spørgsmål..."
           disabled={disabled}
           rows={1}
-          className="flex-1 resize-none rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 disabled:cursor-not-allowed"
+          className="flex-1 resize-none rounded-lg border border-slate-300 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 disabled:cursor-not-allowed"
           style={{ maxHeight: '96px' }}
         />
         <button

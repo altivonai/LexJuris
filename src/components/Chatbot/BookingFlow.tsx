@@ -290,7 +290,7 @@ export default function BookingFlow({ onComplete, onCancel, isSubmitting }: Book
                     value={data.name}
                     onChange={e => { setData(d => ({ ...d, name: e.target.value })); setErrors(er => ({ ...er, name: undefined })); }}
                     placeholder="Anders Jensen"
-                    className={`w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent ${errors.name ? 'border-red-400' : 'border-slate-300'}`}
+                    className={`w-full border rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent ${errors.name ? 'border-red-400' : 'border-slate-300'}`}
                   />
                   {errors.name && <p className="text-xs text-red-500 mt-0.5">{errors.name}</p>}
                 </div>
@@ -304,7 +304,7 @@ export default function BookingFlow({ onComplete, onCancel, isSubmitting }: Book
                     value={data.email}
                     onChange={e => { setData(d => ({ ...d, email: e.target.value })); setErrors(er => ({ ...er, email: undefined })); }}
                     placeholder="anders@email.dk"
-                    className={`w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent ${errors.email ? 'border-red-400' : 'border-slate-300'}`}
+                    className={`w-full border rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent ${errors.email ? 'border-red-400' : 'border-slate-300'}`}
                   />
                   {errors.email && <p className="text-xs text-red-500 mt-0.5">{errors.email}</p>}
                 </div>
@@ -318,7 +318,7 @@ export default function BookingFlow({ onComplete, onCancel, isSubmitting }: Book
                     value={data.phone}
                     onChange={e => { setData(d => ({ ...d, phone: e.target.value })); setErrors(er => ({ ...er, phone: undefined })); }}
                     placeholder="+45 12 34 56 78"
-                    className={`w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent ${errors.phone ? 'border-red-400' : 'border-slate-300'}`}
+                    className={`w-full border rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent ${errors.phone ? 'border-red-400' : 'border-slate-300'}`}
                   />
                   {errors.phone && <p className="text-xs text-red-500 mt-0.5">{errors.phone}</p>}
                 </div>
@@ -332,7 +332,7 @@ export default function BookingFlow({ onComplete, onCancel, isSubmitting }: Book
                     onChange={e => setData(d => ({ ...d, notes: e.target.value }))}
                     placeholder="Fortæl lidt om din sag..."
                     rows={2}
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent resize-none"
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent resize-none"
                   />
                 </div>
               </div>

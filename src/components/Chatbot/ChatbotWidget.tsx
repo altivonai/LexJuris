@@ -141,6 +141,26 @@ export default function ChatbotWidget() {
 
   return (
     <>
+      {/* Pulse rings behind button */}
+      {!isOpen && (
+        <div className="fixed bottom-6 right-6 z-30 w-14 h-14 pointer-events-none">
+          {[0, 1, 2].map(i => (
+            <motion.span
+              key={i}
+              className="absolute inset-0 rounded-full border-2 border-amber-500/40"
+              initial={{ scale: 1, opacity: 0.6 }}
+              animate={{ scale: [1, 2.2], opacity: [0.5, 0] }}
+              transition={{
+                duration: 2.4,
+                repeat: Infinity,
+                delay: i * 0.8,
+                ease: 'easeOut',
+              }}
+            />
+          ))}
+        </div>
+      )}
+
       {/* Floating action button */}
       <motion.button
         initial={{ scale: 0, opacity: 0 }}
