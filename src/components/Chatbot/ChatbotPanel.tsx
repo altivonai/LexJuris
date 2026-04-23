@@ -2,10 +2,12 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Bot } from 'lucide-react';
+import { X, Bot, CalendarCheck } from 'lucide-react';
 import ChatMessage from './ChatMessage';
 import ChatInput from './ChatInput';
-import type { Message } from './types';
+import BookingFlow from './BookingFlow';
+import BookingConfirmation from './BookingConfirmation';
+import type { Message, BookingData } from './types';
 
 interface ChatbotPanelProps {
   isOpen: boolean;
@@ -14,6 +16,14 @@ interface ChatbotPanelProps {
   isLoading: boolean;
   error: string | null;
   onSendMessage: (message: string) => void;
+  // Booking props
+  bookingMode: boolean;
+  onStartBooking: () => void;
+  onCancelBooking: () => void;
+  onCompleteBooking: (data: BookingData) => void;
+  isBookingSubmitting: boolean;
+  bookingConfirmed: { bookingId: string; data: BookingData } | null;
+  onBackToChat: () => void;
 }
 
 const TypingIndicator = () => (
@@ -45,6 +55,13 @@ export default function ChatbotPanel({
   isLoading,
   error,
   onSendMessage,
+  bookingMode,
+  onStartBooking,
+  onCancelBooking,
+  onCompleteBooking,
+  isBookingSubmitting,
+  bookingConfirmed,
+  onBackToChat,
 }: ChatbotPanelProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
@@ -103,7 +120,7 @@ export default function ChatbotPanel({
                 </div>
                 <div>
                   <h3 className="font-[family-name:var(--font-space-grotesk)] font-semibold text-base">
-                    LexJuris Assistent
+                    {bookingMode || bookingConfirmed ? 'Book samtale' : 'LexJuris Assistent'}
                   </h3>
                   <div className="flex items-center gap-1.5">
                     <div className="w-2 h-2 bg-green-400 rounded-full" />
@@ -120,66 +137,101 @@ export default function ChatbotPanel({
               </button>
             </div>
 
-            {/* Messages area */}
-            <div
-              ref={messagesContainerRef}
-              className="flex-1 overflow-y-auto p-4 bg-white"
-              style={{
-                scrollbarWidth: 'thin',
-                scrollbarColor: '#d97706 #f1f5f9',
-              }}
-            >
-              {messages.length === 0 ? (
-                <div className="flex flex-col items-center justify-center h-full text-center px-4">
-                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4">
-                    <Bot className="w-8 h-8 text-amber-600" />
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed max-w-xs">
-                    {welcomeMessage}
-                  </p>
-                  <div className="mt-6 flex flex-col gap-2 w-full max-w-xs">
-                    <button
-                      onClick={() => onSendMessage('Hvad koster køberrådgivning?')}
-                      className="text-sm text-left px-4 py-2 rounded-lg border border-slate-200 hover:border-amber-600 hover:text-amber-700 transition-colors"
-                    >
-                      Hvad koster køberrådgivning?
-                    </button>
-                    <button
-                      onClick={() => onSendMessage('Hvordan opretter jeg et testamente?')}
-                      className="text-sm text-left px-4 py-2 rounded-lg border border-slate-200 hover:border-amber-600 hover:text-amber-700 transition-colors"
-                    >
-                      Hvordan opretter jeg et testamente?
-                    </button>
-                    <button
-                      onClick={() => onSendMessage('Hvad er jeres åbningstider?')}
-                      className="text-sm text-left px-4 py-2 rounded-lg border border-slate-200 hover:border-amber-600 hover:text-amber-700 transition-colors"
-                    >
-                      Hvad er jeres åbningstider?
-                    </button>
-                  </div>
+            {/* Content area */}
+            {bookingConfirmed ? (
+              <BookingConfirmation
+                bookingId={bookingConfirmed.bookingId}
+                data={bookingConfirmed.data}
+                onBackToChat={onBackToChat}
+              />
+            ) : bookingMode ? (
+              <BookingFlow
+                onComplete={onCompleteBooking}
+                onCancel={onCancelBooking}
+                isSubmitting={isBookingSubmitting}
+              />
+            ) : (
+              <>
+                {/* Messages area */}
+                <div
+                  ref={messagesContainerRef}
+                  className="flex-1 overflow-y-auto p-4 bg-white"
+                  style={{
+                    scrollbarWidth: 'thin',
+                    scrollbarColor: '#d97706 #f1f5f9',
+                  }}
+                >
+                  {messages.length === 0 ? (
+                    <div className="flex flex-col items-center justify-center h-full text-center px-4">
+                      <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                        <Bot className="w-8 h-8 text-amber-600" />
+                      </div>
+                      <p className="text-slate-600 text-sm leading-relaxed max-w-xs">
+                        {welcomeMessage}
+                      </p>
+                      <div className="mt-6 flex flex-col gap-2 w-full max-w-xs">
+                        <button
+                          onClick={onStartBooking}
+                          className="text-sm text-left px-4 py-2.5 rounded-lg border-2 border-amber-600 bg-amber-50 text-amber-700 hover:bg-amber-100 transition-colors font-medium flex items-center gap-2"
+                        >
+                          <CalendarCheck className="w-4 h-4" /> Book gratis samtale
+                        </button>
+                        <button
+                          onClick={() => onSendMessage('Hvad koster køberrådgivning?')}
+                          className="text-sm text-left px-4 py-2 rounded-lg border border-slate-200 hover:border-amber-600 hover:text-amber-700 transition-colors"
+                        >
+                          Hvad koster køberrådgivning?
+                        </button>
+                        <button
+                          onClick={() => onSendMessage('Hvordan opretter jeg et testamente?')}
+                          className="text-sm text-left px-4 py-2 rounded-lg border border-slate-200 hover:border-amber-600 hover:text-amber-700 transition-colors"
+                        >
+                          Hvordan opretter jeg et testamente?
+                        </button>
+                        <button
+                          onClick={() => onSendMessage('Hvad er jeres åbningstider?')}
+                          className="text-sm text-left px-4 py-2 rounded-lg border border-slate-200 hover:border-amber-600 hover:text-amber-700 transition-colors"
+                        >
+                          Hvad er jeres åbningstider?
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      {messages.map((message, index) => (
+                        <ChatMessage
+                          key={message.id}
+                          message={message}
+                          isLast={index === messages.length - 1 && !isLoading}
+                        />
+                      ))}
+                      {isLoading && <TypingIndicator />}
+                      {error && (
+                        <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
+                          <p className="text-sm text-red-800">{error}</p>
+                        </div>
+                      )}
+                      <div ref={messagesEndRef} />
+                    </>
+                  )}
                 </div>
-              ) : (
-                <>
-                  {messages.map((message, index) => (
-                    <ChatMessage
-                      key={message.id}
-                      message={message}
-                      isLast={index === messages.length - 1 && !isLoading}
-                    />
-                  ))}
-                  {isLoading && <TypingIndicator />}
-                  {error && (
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
-                      <p className="text-sm text-red-800">{error}</p>
+
+                {/* Input area with booking button */}
+                <div className="border-t border-slate-200 bg-white">
+                  {messages.length > 0 && (
+                    <div className="px-4 pt-3 pb-0">
+                      <button
+                        onClick={onStartBooking}
+                        className="w-full text-sm px-4 py-2 rounded-lg border-2 border-amber-600 bg-amber-50 text-amber-700 hover:bg-amber-100 transition-colors font-medium flex items-center justify-center gap-2"
+                      >
+                        <CalendarCheck className="w-4 h-4" /> Book gratis samtale
+                      </button>
                     </div>
                   )}
-                  <div ref={messagesEndRef} />
-                </>
-              )}
-            </div>
-
-            {/* Input area */}
-            <ChatInput onSend={onSendMessage} disabled={isLoading} />
+                  <ChatInput onSend={onSendMessage} disabled={isLoading} />
+                </div>
+              </>
+            )}
           </motion.div>
         </>
       )}

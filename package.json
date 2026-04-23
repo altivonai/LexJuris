@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:api": "node api/dev-server.js",
+    "dev:full": "swa start http://localhost:3000 --api-devserver-url http://localhost:7071",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

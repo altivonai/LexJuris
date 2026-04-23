@@ -4,13 +4,18 @@ import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 import ChatbotPanel from './ChatbotPanel';
-import type { Message, ChatApiRequest, ChatApiResponse } from './types';
+import type { Message, ChatApiRequest, ChatApiResponse, BookingData, BookingApiResponse } from './types';
 
 export default function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Booking state
+  const [bookingMode, setBookingMode] = useState(false);
+  const [isBookingSubmitting, setIsBookingSubmitting] = useState(false);
+  const [bookingConfirmed, setBookingConfirmed] = useState<{ bookingId: string; data: BookingData } | null>(null);
 
   const sendMessage = useCallback(async (content: string) => {
     // Add user message immediately
@@ -78,9 +83,60 @@ export default function ChatbotWidget() {
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
     if (!isOpen) {
-      // Clear error when opening
       setError(null);
     }
+  };
+
+  const handleStartBooking = () => {
+    setBookingMode(true);
+    setBookingConfirmed(null);
+  };
+
+  const handleCancelBooking = () => {
+    setBookingMode(false);
+  };
+
+  const handleCompleteBooking = useCallback(async (data: BookingData) => {
+    setIsBookingSubmitting(true);
+    try {
+      const response = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Booking fejlede');
+      }
+
+      const result: BookingApiResponse = await response.json();
+
+      if (result.success) {
+        setBookingMode(false);
+        setBookingConfirmed({ bookingId: result.bookingId, data });
+
+        // Add confirmation message to chat history
+        const confirmMsg: Message = {
+          id: `booking-${Date.now()}`,
+          role: 'assistant',
+          content: `Booking bekræftet! (${result.bookingId}). Bekræftelse sendt til ${data.email}.`,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, confirmMsg]);
+      } else {
+        throw new Error(result.message || 'Booking fejlede');
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Der opstod en fejl med din booking';
+      setError(msg);
+      setBookingMode(false);
+    } finally {
+      setIsBookingSubmitting(false);
+    }
+  }, []);
+
+  const handleBackToChat = () => {
+    setBookingConfirmed(null);
   };
 
   return (
@@ -116,6 +172,13 @@ export default function ChatbotWidget() {
         isLoading={isLoading}
         error={error}
         onSendMessage={sendMessage}
+        bookingMode={bookingMode}
+        onStartBooking={handleStartBooking}
+        onCancelBooking={handleCancelBooking}
+        onCompleteBooking={handleCompleteBooking}
+        isBookingSubmitting={isBookingSubmitting}
+        bookingConfirmed={bookingConfirmed}
+        onBackToChat={handleBackToChat}
       />
     </>
   );

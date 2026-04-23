@@ -25,3 +25,23 @@ export interface ChatApiResponse {
   conversationId: string;
   timestamp: string;
 }
+
+// Booking types
+export type BookingStep = 'select-service' | 'select-date' | 'enter-details' | 'confirm' | 'done';
+
+export interface BookingData {
+  service: string;
+  date: string;
+  time: string;
+  name: string;
+  email: string;
+  phone: string;
+  notes: string;
+}
+
+export interface BookingApiResponse {
+  success: boolean;
+  bookingId: string;
+  message: string;
+  emailSent: boolean;
+}

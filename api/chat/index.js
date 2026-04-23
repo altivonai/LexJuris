@@ -1,102 +1,46 @@
-const { AzureOpenAI } = require('openai');
-const knowledgeBase = require('../knowledge-base.json');
+const { OpenAI } = require("openai");
 
-const SYSTEM_PROMPT = `Du er en venlig og hjælpsom assistent for FAVNA Dalum Dyreklinik i Odense.
+const requestCounts = new Map();
+const RATE_LIMIT_WINDOW_MS = 60000;
+const MAX_REQUESTS_PER_WINDOW = 10;
 
-Regler:
-- Svar KUN baseret på den medfølgende information fra klinikken.
-- Svar altid på dansk.
-- Vær venlig, professionel og kortfattet.
-- Forstå brugerens intention: Hvis de spørger generelt om et emne (f.eks. "jeg vil have en hund"), så giv relevant information om hvad klinikken tilbyder for det emne (vaccinationer, sundhedsundersøgelser, FAVNA Plan osv.) — spring IKKE direkte til booking.
-- Henvis KUN til booking (https://my.provet.com/favna-dyreklinikker/favna-dalum-dyreklinik) når brugeren tydeligt beder om at bestille en tid.
-- Nævn FAVNA Plan med pris og fordele når det er relevant, men kun henvis til tilmeldingslinket hvis brugeren aktivt vil tegne en plan.
-- Hvis du ikke kan finde svaret i den medfølgende kontekst, bed venligst kunden kontakte klinikken på telefon +45 66 13 23 86 eller email dalum@favna.dk.
-- Brug aldrig information der ikke kommer fra den medfølgende kontekst.
-- Formater svar med korte afsnit. Brug punktlister når det er relevant.
-- Formater alle links som markdown: [linktekst](url) — skriv ALDRIG bare en rå URL.
-- Nævn aldrig at du er en AI eller at du har en "kontekst". Svar som om du er klinikkens digitale assistent.
+const SYSTEM_PROMPT = "Du er en juridisk assistent for LexJuris i Viborg. YDELSER: Koberadgivning 5800 kr, Testamente fra 2495 kr. KONTAKT: 70 70 71 22, info@lexjuris.dk. Svar kort og dansk.";
 
-Her er information om klinikken:
-
-${knowledgeBase.content}`;
-
-const MAX_HISTORY = 8;
-const MAX_MESSAGE_LENGTH = 500;
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const userRequests = requestCounts.get(ip) || [];
+  const recentRequests = userRequests.filter(t => now - t < RATE_LIMIT_WINDOW_MS);
+  if (recentRequests.length >= MAX_REQUESTS_PER_WINDOW) return false;
+  recentRequests.push(now);
+  requestCounts.set(ip, recentRequests);
+  return true;
+}
 
 module.exports = async function (context, req) {
-  const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
-  const apiKey = process.env.AZURE_OPENAI_API_KEY;
-  const deployment = process.env.AZURE_OPENAI_DEPLOYMENT || 'gpt-4-1-nano';
-
-  if (!endpoint || !apiKey) {
-    context.res = {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Azure OpenAI is not configured' }),
-    };
-    return;
-  }
-
-  const body = req.body;
-  if (!body || !body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
-    context.res = {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'messages array is required and must not be empty' }),
-    };
-    return;
-  }
-
-  // Validate and sanitize messages
-  const validMessages = body.messages
-    .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim().length > 0)
-    .map((m) => ({
-      role: m.role,
-      content: m.content.trim().slice(0, MAX_MESSAGE_LENGTH),
-    }));
-
-  if (validMessages.length === 0) {
-    context.res = {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'No valid messages provided' }),
-    };
-    return;
-  }
-
-  // Keep only last N messages
-  const recentMessages = validMessages.slice(-MAX_HISTORY);
-
+  context.log("Chat called");
+  context.res = { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" }};
+  if (req.method === "OPTIONS") { context.res.status = 200; context.res.body = ""; return; }
   try {
-    const client = new AzureOpenAI({
-      endpoint,
-      apiKey,
-      apiVersion: '2024-10-21',
-    });
-
-    const completion = await client.chat.completions.create({
-      model: deployment,
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...recentMessages,
-      ],
-      max_tokens: 800,
-      temperature: 0.3,
-    });
-
-    const reply = completion.choices[0]?.message?.content || 'Beklager, jeg kunne ikke generere et svar. Kontakt venligst klinikken direkte.';
-
-    context.res = {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reply }),
-    };
-  } catch (err) {
-    context.log('Azure OpenAI error:', err.message);
-    context.res = {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Der opstod en fejl. Prøv venligst igen.' }),
-    };
+    const clientIp = req.headers["x-forwarded-for"] || "unknown";
+    if (!checkRateLimit(clientIp)) { context.res.status = 429; context.res.body = JSON.stringify({ error: "For mange." }); return; }
+    const { message, conversationHistory } = req.body || {};
+    if (!message) { context.res.status = 400; context.res.body = JSON.stringify({ error: "Besked påkrævet." }); return; }
+    const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
+    const apiKey = process.env.AZURE_OPENAI_API_KEY;
+    const deployment = process.env.AZURE_OPENAI_DEPLOYMENT;
+    if (!endpoint || !apiKey || !deployment) { context.log.error("Missing config"); context.res.status = 500; context.res.body = JSON.stringify({ error: "Service fejl." }); return; }
+    const client = new OpenAI({ apiKey, baseURL: endpoint + "openai/deployments/" + deployment, defaultQuery: { "api-version": "2024-08-01-preview" }, defaultHeaders: { "api-key": apiKey }});
+    const messages = [{ role: "system", content: SYSTEM_PROMPT }];
+    if (Array.isArray(conversationHistory)) { messages.push(...conversationHistory.slice(-10)); }
+    messages.push({ role: "user", content: message });
+    const result = await client.chat.completions.create({ model: deployment, messages, max_tokens: 800, temperature: 0.7 });
+    const responseMessage = result.choices[0]?.message?.content;
+    if (!responseMessage) throw new Error("No response");
+    context.res.status = 200;
+    context.res.body = JSON.stringify({ response: responseMessage, conversationId: context.invocationId, timestamp: new Date().toISOString() });
+  } catch (error) {
+    context.log.error("Error:", error);
+    context.res.status = 500;
+    context.res.body = JSON.stringify({ error: "Der opstod en fejl. Kontakt 70 70 71 22." });
   }
 };
