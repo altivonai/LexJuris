@@ -108,7 +108,7 @@ export default function ChatbotPanel({
             transition={{ duration: 0.2 }}
             className="fixed z-50 bg-white rounded-2xl shadow-2xl flex flex-col
                        lg:bottom-24 lg:right-6 lg:w-[400px] lg:h-[600px]
-                       inset-0 lg:inset-auto"
+                       bottom-4 left-4 right-4 top-16 lg:inset-auto"
             role="dialog"
             aria-label="Chat med juridisk assistent"
           >

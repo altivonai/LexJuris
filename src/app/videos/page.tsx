@@ -44,10 +44,11 @@ export default function VideosPage() {
                   {/* YouTube embed */}
                   <div className="aspect-video relative bg-slate-900">
                     <iframe
-                      src={`https://www.youtube.com/embed/${video.id}`}
+                      src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1`}
                       title={video.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
+                      referrerPolicy="strict-origin-when-cross-origin"
                       className="absolute inset-0 w-full h-full"
                     />
                   </div>

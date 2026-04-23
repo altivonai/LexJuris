@@ -88,7 +88,7 @@ export default function Hero({
       {/* Bottom accent */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50" />
 
-      <div className={`relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 ${compact ? 'text-center' : ''}`}>
+      <div className={`relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 ${compact ? 'text-center' : 'text-center sm:text-left'}`}>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -124,9 +124,9 @@ export default function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className={`mt-8 sm:mt-10 flex flex-col gap-3 ${compact ? 'items-center' : 'items-start'}`}
+            className={`mt-8 sm:mt-10 flex flex-col gap-3 ${compact ? 'items-center' : 'items-center sm:items-start'}`}
           >
-            <div className={`flex flex-col sm:flex-row gap-3 ${compact ? '' : ''}`}>
+            <div className={`flex flex-col sm:flex-row gap-3 ${compact ? '' : 'items-center sm:items-start'}`}>
               {ctaText && ctaHref && (
                 <Link
                   href={ctaHref}

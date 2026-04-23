@@ -150,13 +150,13 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-[calc(4rem+2px)] bg-white z-40"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:hidden bg-white z-40 overflow-hidden border-b border-slate-200 shadow-lg"
           >
-            <div className="px-6 py-6 space-y-1 h-full overflow-y-auto">
+            <div className="px-6 py-6 space-y-1 overflow-y-auto max-h-[calc(100vh-5rem)]">
               {/* Ydelser accordion */}
               <div>
                 <button
